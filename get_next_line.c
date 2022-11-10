@@ -6,13 +6,13 @@
 /*   By: cyacoub- <cyacoub-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 14:05:17 by cyacoub-          #+#    #+#             */
-/*   Updated: 2022/11/10 10:54:59 by cyacoub-         ###   ########.fr       */
+/*   Updated: 2022/11/10 15:12:19 by cyacoub-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_get_line(char *stash)
+static char	*ft_get_line(char *stash)
 {
 	int			i;
 	static char	*str;
@@ -40,7 +40,7 @@ char	*ft_get_line(char *stash)
 	return (str);
 }
 
-char	*ft_stash(char *stash)
+static char	*ft_stash(char *stash)
 {
 	int		i;
 	int		j;
@@ -66,7 +66,7 @@ char	*ft_stash(char *stash)
 	return (str);
 }
 
-char	*ft_read_and_stash(int fd, char *stash)
+static char	*ft_read_and_stash(int fd, char *stash)
 {
 	char	*buf;
 	int		readed;
