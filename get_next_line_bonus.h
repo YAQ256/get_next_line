@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cyacoub- <cyacoub-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/29 14:02:41 by cyacoub-          #+#    #+#             */
-/*   Updated: 2022/11/10 10:54:04 by cyacoub-         ###   ########.fr       */
+/*   Created: 2022/11/10 10:57:08 by cyacoub-          #+#    #+#             */
+/*   Updated: 2022/11/10 10:57:12 by cyacoub-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 5
@@ -19,6 +19,7 @@
 
 # include "unistd.h"
 # include "stdlib.h"
+# include "limits.h"
 
 char	*get_next_line(int fd);
 char	*ft_read_and_stash(int fd, char *stash);

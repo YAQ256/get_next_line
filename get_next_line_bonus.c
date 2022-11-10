@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cyacoub- <cyacoub-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/29 14:05:17 by cyacoub-          #+#    #+#             */
-/*   Updated: 2022/11/10 10:54:59 by cyacoub-         ###   ########.fr       */
+/*   Created: 2022/11/10 10:56:01 by cyacoub-          #+#    #+#             */
+/*   Updated: 2022/11/10 10:56:35 by cyacoub-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*ft_get_line(char *stash)
 {
-	int			i;
-	static char	*str;
+	int		i;
+	char	*str;
 
 	i = 0;
 	if (!stash[i])
@@ -93,18 +93,18 @@ char	*ft_read_and_stash(int fd, char *stash)
 char	*get_next_line(int fd)
 {
 	char		*line;
-	static char	*stash;
+	static char	*stash[OPEN_MAX];
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
 	{
-		free(stash);
-		stash = NULL;
+		free(stash[fd]);
+		stash[fd] = NULL;
 		return (NULL);
 	}
-	stash = ft_read_and_stash(fd, stash);
-	if (!stash)
+	stash[fd] = ft_read_and_stash(fd, stash[fd]);
+	if (!stash[fd])
 		return (NULL);
-	line = ft_get_line(stash);
-	stash = ft_stash(stash);
+	line = ft_get_line(stash[fd]);
+	stash[fd] = ft_stash(stash[fd]);
 	return (line);
 }
