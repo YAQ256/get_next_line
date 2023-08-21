@@ -6,7 +6,7 @@
 /*   By: cyacoub- <cyacoub-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 14:02:08 by cyacoub-          #+#    #+#             */
-/*   Updated: 2023/08/21 12:45:57 by cyacoub-         ###   ########.fr       */
+/*   Updated: 2023/08/21 12:58:26 by cyacoub-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ size_t	ft_strlen_gnl(char *str)
 	return (i);
 }
 
-char	*ft_strjoin_gnl_gnl(char *s1, char *s2)
+char	*ft_strjoin_gnl(char *s1, char *s2)
 {
 	size_t	i;
 	size_t	j;
