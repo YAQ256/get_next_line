@@ -6,7 +6,7 @@
 /*   By: cyacoub- <cyacoub-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 14:02:41 by cyacoub-          #+#    #+#             */
-/*   Updated: 2022/11/10 15:11:46 by cyacoub-         ###   ########.fr       */
+/*   Updated: 2023/08/21 12:45:58 by cyacoub-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 # include "stdlib.h"
 
 char	*get_next_line(int fd);
-size_t	ft_strlen(char *str);
-char	*ft_strjoin(char *s1, char *s2);
-char	*ft_strchr(char *str, int c);
+size_t	ft_strlen_gnl(char *str);
+char	*ft_strjoin_gnl(char *s1, char *s2);
+char	*ft_strchr_gnl(char *str, int c);
 
 #endif

@@ -6,13 +6,13 @@
 /*   By: cyacoub- <cyacoub-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 14:02:08 by cyacoub-          #+#    #+#             */
-/*   Updated: 2022/11/10 10:55:34 by cyacoub-         ###   ########.fr       */
+/*   Updated: 2023/08/21 12:45:57 by cyacoub-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft_strlen(char *str)
+size_t	ft_strlen_gnl(char *str)
 {
 	size_t	i;
 
@@ -26,7 +26,7 @@ size_t	ft_strlen(char *str)
 	return (i);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin_gnl_gnl(char *s1, char *s2)
 {
 	size_t	i;
 	size_t	j;
@@ -39,7 +39,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	}
 	if (!s1 || !s2)
 		return (NULL);
-	str = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	str = malloc(sizeof(char) * (ft_strlen_gnl(s1) + ft_strlen_gnl(s2) + 1));
 	if (str == NULL)
 		return (NULL);
 	i = -1;
@@ -49,12 +49,12 @@ char	*ft_strjoin(char *s1, char *s2)
 			str[i] = s1[i];
 	while (s2[j] != '\0')
 		str[i++] = s2[j++];
-	str[ft_strlen(s1) + ft_strlen(s2)] = '\0';
+	str[ft_strlen_gnl(s1) + ft_strlen_gnl(s2)] = '\0';
 	free(s1);
 	return (str);
 }
 
-char	*ft_strchr(char *str, int c)
+char	*ft_strchr_gnl(char *str, int c)
 {
 	int	i;
 
@@ -62,7 +62,7 @@ char	*ft_strchr(char *str, int c)
 	if (!str)
 		return (0);
 	if (c == '\0')
-		return ((char *)&str[ft_strlen(str)]);
+		return ((char *)&str[ft_strlen_gnl(str)]);
 	while (str[i] != '\0')
 	{
 		if (str[i] == (char) c)
